@@ -1,0 +1,55 @@
+.modal.sq {
+    position: fixed;
+    display: grid;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 998;
+    outline: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    background-color: rgba(0,0,0, 0.5);
+}
+
+.modal.sq.show {
+    opacity: 1;
+    visibility: visible;
+    grid-template-columns: auto;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "h" "modal" "f";
+}
+
+.modal.sq > div[name=content] {
+    display: grid;
+    justify-self: center;
+    grid-area: modal;
+    background-color: white;
+    padding: 4mm;
+    grid-template-columns: auto;
+    grid-template-rows: 10mm auto 10mm;
+    grid-template-areas: "head" "body" "foot";
+}
+
+.modal.sq > div[name=content] [name=header] {
+    grid-area: head;
+    position: relative;
+}
+
+.modal.sq>div[name=content] [name=header] > span {
+    font-size: 6mm;
+    font-weight: bold;
+}
+.modal.sq > div[name=content] [template=body] {
+    grid-area: body;
+    margin: 4mm 0;
+}
+.modal.sq > div[name=content] [template=footer] {
+    grid-area: foot;
+}
+
+.modal.sq > div[name=content] [name=close] {
+    position: absolute;
+    right: 0;
+}

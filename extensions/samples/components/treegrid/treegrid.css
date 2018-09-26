@@ -1,0 +1,25 @@
+.treegrid.samples {
+    color: inherit;
+    display: grid;
+    max-height:100mm;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 10mm;
+    grid-template-areas: "lefttop right" "leftmid right" "bot bot";
+}
+
+.treegrid.samples .codearea[title="Columns:"] {
+    grid-area: lefttop;
+}
+
+.treegrid.samples .codearea[title="Data:"] {
+    grid-area: leftmid;
+}
+
+.treegrid.samples .sq.treegrid {
+    grid-area: right;
+    width: 100%;
+}
+
+.treegrid.samples button {
+    grid-area: bot;
+}

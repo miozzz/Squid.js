@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<table tabindex="0" xmlns:sq="sq"
+    xmlns:treegrid="treegrid">
+    <thead >
+        <tr></tr>
+    </thead>
+    <tbody sq-selectable="true"></tbody>
+    <tfoot></tfoot>
+</table>

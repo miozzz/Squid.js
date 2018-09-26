@@ -1,0 +1,40 @@
+.samples.bind {
+    display: grid;
+    grid-template-columns: 4fr 5fr;
+    grid-template-rows: auto;
+    grid-template-areas: "left right";
+  
+}
+
+.samples.bind>[sq-get] {
+    grid-area: left;
+}
+
+.samples.bind>[sq-set] {
+    grid-area: right;
+}
+
+.samples.bind>div {
+    margin: 0.5m;
+    padding: 2mm;
+    background: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 2fr 2fr;
+    grid-template-areas: "top top" "mid mid" "bot bot";
+}
+
+.samples.bind>div>[sq-context] {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 1fr 0.5fr 1fr;
+}
+
+.samples.bind input {
+    height: 6mm;
+}
+
+.samples.bind>div>* {
+    margin-top: 1mm;
+    display: grid;
+}

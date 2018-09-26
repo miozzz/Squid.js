@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<div>
+    <div sq-context="details" sq-bind="data" >
+        <label name="nm">FullName:</label>
+        <div>
+            <input name="nm" value="${name}"/>
+            <input name="lstnm" value="${lastname}"/>
+        </div>
+        <label name="contacts">Contact Numbers:</label>
+        <div sq-context="contacts">
+        <label name="home">Home:</label>
+            <input name="home" value="${home}"/>
+            <label name="mobile">Mobile:</label>
+            <input name="mobile" value="${mobile}"/>
+        </div>
+        <label name="addrs">Address:</label>
+        <input name="addrs" value="${address}"/>
+    </div>
+    <div sq-context="details" sq-bind="data" sq-bind-sets="false">
+        <label name="nm">FullName:</label>
+        <div>
+            <input name="nm" value="${name}"/>
+            <input name="lstnm" value="${lastname}"/>
+        </div>
+        <label name="contacts">Contact Numbers:</label>
+        <div sq-context="contacts">
+        <label name="home">Home:</label>
+            <input name="home" value="${home}"/>
+            <label name="mobile">Mobile:</label>
+            <input name="mobile" value="${mobile}"/>
+        </div>
+        <label name="addrs">Address:</label>
+        <input name="addrs" value="${address}"/>
+    </div>
+     <div sq-context="details" sq-bind="data" sq-bind-gets="false">
+        <label name="nm">FullName:</label>
+        <div>
+            <input name="nm" value="${name}"/>
+            <input name="lstnm" value="${lastname}"/>
+        </div>
+        <label name="contacts">Contact Numbers:</label>
+        <div sq-context="contacts">
+        <label name="home">Home:</label>
+            <input name="home" value="${home}"/>
+            <label name="mobile">Mobile:</label>
+            <input name="mobile" value="${mobile}"/>
+        </div>
+        <label name="addrs">Address:</label>
+        <input name="addrs" value="${address}"/>
+    </div>
+    <!-- <div sq-context="details" sq-bind="data" sq-bind-sets="abc">
+        <label name="nm">FullName:</label>
+        <span name="nm"> ${name} ${lastname}</span>
+        <label name="contacts">Contact Numbers:</label>
+        <div sq-context="contacts">
+            <label name="home">Home:</label>
+            <span name="home"> ${home}</span>
+            <label name="mobile">Mobile:</label>
+            <span name="mobile"> ${mobile}</span>
+        </div>
+        <label name="addrs">Address:</label>
+        <span name="addrs">${address}</span>
+    </div>
+    -->
+</div>    

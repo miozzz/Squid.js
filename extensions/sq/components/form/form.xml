@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<form sq-repeat="fields" 
+    xmlns:sq="sq">
+        <label>${label}</label>
+        <sq:input placeholder="${label}" data="${option}" type="${type}" value="${value}"></sq:input>
+</form>

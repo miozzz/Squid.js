@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<div xmlns:samples="samples"> 
+    <samples:codearea title="Data:" sq-context="contacts" value="${@data}"></samples:codearea>
+    <div sq-repeat="contacts">
+        <div key="${@key}">
+            <label name="nm">FullName:</label>
+            <span name="nm"> ${name} ${lastname}</span>
+            <label name="contacts">Contacts:</label>
+            <ul sq-repeat="Numbers">
+                <li>${@key} : ${@data}</li>
+            </ul>
+        </div>
+    </div>
+    <button>Set Data</button>
+</div>

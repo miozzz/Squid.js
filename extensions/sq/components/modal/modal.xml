@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<div>
+    <div name="content">
+        <div name="header">
+            <span name="title">My Modal</span>
+            <button name="close">
+                <span>x</span>
+            </button>
+        </div>
+        <div template="body"></div>
+        <div template="footer"></div>
+    </div>
+</div>

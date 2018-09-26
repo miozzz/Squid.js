@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<div>
+    <div class="progress">
+        <div class="loadbar"></div>
+    </div>
+    <div class="header">
+        <span>Sign In</span>
+        <span name="app"></span>
+        <img name="appimg"></img>
+        <span class="forgot">Reset Password</span>
+        <span class="forgot">Please enter your registered username and e-mail address. 
+        An e-mail will be sent to you regarding the next instructions in resetting your password.</span>
+    </div>
+    <form sq-context="credentials">
+        <img name="userimg" src=""></img>
+        <div class="userinput">
+            <input name="username" value="${username}" placeholder=" " required="true"></input>
+            <span name="usernamelbl">Username</span>
+        </div>
+        <img name="passimg" src=""></img>
+        <div class="passinput">
+            <input name="password" type="password" value="${password}" placeholder=" " required="true"></input>
+            <span name="passwordlbl">Password</span>
+        </div>
+        <span name="keepme">Remember Me</span>
+        <input name="keep" type="checkbox" checked="true"/>
+        <input type="submit" value="Log In"></input>
+    </form>
+    <form sq-context="forgotinfo">
+        <img name="userimg" src=""></img>
+        <div class="userinput">
+            <input name="username" value="${username}" placeholder=" " required="true"></input>
+            <span name="usernamelbl">Username</span>
+        </div>
+        <img name="emailimg" src=""></img>
+        <div class="emailinput">
+            <input name="email" type="email" value="${email}" placeholder=" " required="true"></input>
+            <span name="emaillbl">E-mail address</span>
+        </div>
+        <input type="submit" value="Reset your password"></input>
+    </form>
+    <button name="forgotpass">Forgot password?</button>
+</div>

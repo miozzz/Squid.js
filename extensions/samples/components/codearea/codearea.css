@@ -1,0 +1,22 @@
+.codearea.samples {
+    background: #f2f2f2;
+    padding: 5px;
+
+    clear: both;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 5mm auto;
+    grid-template-areas: "top" "bot";
+}
+
+.codearea.samples label {
+    grid-area: top;
+}
+
+.codearea.samples pre {
+    grid-area: bot;
+    overflow: auto;
+    background: #e7e7e7;
+    padding: 5px;
+   
+}

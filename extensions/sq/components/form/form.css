@@ -1,0 +1,9 @@
+.sq.form{
+    display: grid;
+    max-width:80mm;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+ 
+
+}
+ 

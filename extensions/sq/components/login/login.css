@@ -1,0 +1,387 @@
+.login.sq {
+    position: relative;
+    background: whitesmoke;
+    width: 22em;
+    margin: 0 auto;
+    padding: 2mm;
+    z-index: 1000;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 25mm 1mm 1.5fr 5mm;
+    grid-template-areas: "top top" "m1 m1" "middle middle" "foot foot";
+}
+
+.login.sq.forgot {
+    grid-template-rows: 33mm 1mm 1.5fr 5mm;
+    border: 2px dotted #005281;
+}
+
+.login.sq>.header {
+    position: relative;
+    grid-area: top;
+    width: calc(100% - 7mm);
+    padding-top: 3mm;
+    padding-left: 7mm;
+    justify-self: left;
+    font-size: 7mm;
+    font-weight: 500;
+    color: #223134;
+}
+
+.login.sq> .header > span[name=app],
+.login.sq.forgot > .header>span.forgot:last-child {
+    font-size: 4mm;
+    width: 70%;
+    display: block;
+    text-align: justify
+}
+
+.login.sq.forgot >.header>span.forgot:last-child {
+    font-size: 3.5mm;
+    width: calc(100% - 8mm);
+}
+
+.login.sq> .header > img {
+    position: absolute;
+    top: 4mm;
+    right: 5mm;
+    width: 15mm;
+}
+
+.login.sq.forgot > .header > img { display: none }
+
+.login.sq.forgot>.header > span:not(.forgot) { display: none }
+.login.sq:not(.forgot)>.header > .forgot { display: none }
+
+.login.sq>form {
+    grid-area: middle;
+    display: grid;
+    margin-bottom: 2mm;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 10mm 4mm 10mm 4mm 1fr 4mm 1fr;
+    grid-template-areas: "q2 q1" "m1 m1" "q3 q4" "m2 m2" "q5 q6" "m3 m3" "q7 q7";
+}
+
+.login.sq>form[sq-context=forgotinfo] {
+    grid-template-rows: 10mm 4mm 10mm 4mm 0 4mm 1fr;
+}
+
+.login.sq:not(.forgot) > form[sq-context=forgotinfo] { display: none }
+.login.sq.forgot > form[sq-context=credentials] { display: none }
+
+.login.sq>button {
+    max-height: 7mm;
+    margin: 0.5mm;
+}
+
+.login.sq>form>span {
+    max-height: 5mm;
+    text-align: center;
+    align-self: center;
+    color: #223134
+}
+
+.login.sq>form input:not([type=submit]) {
+    width: calc(100% - 10mm);
+    padding: 2mm 0;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #1e83bb;
+    transition: border 0.3s ease-out;
+}
+
+.login.sq>form input:not([type=submit]):focus {
+    border-bottom: 2px solid #1e83bb;
+}
+
+.login.sq>form>img {
+    justify-self: center;
+    align-self: center;
+    width: 5mm
+}
+
+.login.sq>form>img[name=userimg] {
+    grid-area: q2;
+}
+
+.login.sq>form>img[name=passimg] {
+    grid-area: q3;
+}
+.login.sq>form>img[name=emailimg] {
+    grid-area: q3;
+}
+
+.login.sq>form>span[name=keepme] {
+    grid-area: q6;
+    text-align: left;
+}
+
+.login.sq>form>.userinput {
+    grid-area: q1;
+    position: relative;
+}
+
+.login.sq>form>.passinput {
+    grid-area: q4;
+    position: relative;
+}
+
+.login.sq>form>.emailinput {
+    grid-area: q4;
+    position: relative;
+}
+
+.login.sq>form>div span {
+    position: absolute;
+    top: 1.5mm;
+    left: 1mm;
+    color: #757575;
+    transform-origin: bottom left;
+    pointer-events: none;
+    transition: all .3s cubic-bezier(0.4,0,0.2,1);
+}
+
+.login.sq>form>div input:focus + span,
+.login.sq>form>div input:not(:placeholder-shown) + span {
+    color: #1e83bb;
+    left: 0;
+    transform: scale(.75) translateY(-22px);
+}
+
+.login.sq>form input:not(:placeholder-shown):invalid {
+    border-bottom: 2px solid #d77477 !important;
+}
+
+.login.sq>form>input[name=keep] {
+    grid-area: q5;
+    margin: 2mm 4mm;
+    justify-self: end;
+}
+
+.login.sq>form>[type=submit] {
+    grid-area: q7;
+    padding: 2mm;
+    width: 95%;
+    max-height: 12mm;
+    align-self: center;
+    justify-self: center;
+    background: #1e83bb;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.login.sq>form>[type=submit]:hover {
+    background-color: #00517e;
+}
+
+.login.sq>button[name=forgotpass] {
+    grid-area: foot;
+    width: 50%;
+    justify-self: right;
+    font-size: 3mm;
+    text-align: right;
+    background-color: transparent;
+    color: #006794;
+    border: none;
+}
+
+.login.sq .progress {
+    display:none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background-color: #2a9ad8;
+    background-clip: padding-box;
+    overflow: hidden;
+}
+.login.sq[stat] .progress { display: block }
+.login.sq .progress .loadbar { background-color: #045696; }
+.login.sq[stat=error] .progress .loadbar {
+    background-color: #fa3838;
+}
+.login.sq .progress .loadbar:before {
+    content: '';
+    position: absolute;
+    background-color: inherit;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    will-change: left, right;
+    -webkit-animation: loadbar 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+    animation: loadbar 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+}
+
+.login.sq[stat=error] .progress .loadbar:before {
+    -webkit-animation: unset;
+    animation: unset;
+    -webkit-animation: fillred 0.s cubic-bezier(0.35, 1.27, 1, 0.98);
+    animation: fillred 0.5s cubic-bezier(0.35, 1.27, 1, 0.98);
+    animation-fill-mode: forwards; 
+}
+
+.login.sq .progress .loadbar:after {
+    content: '';
+    position: absolute;
+    background-color: inherit;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    will-change: left, right;
+    -webkit-animation: loadbar-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+    animation: loadbar-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+    -webkit-animation-delay: 1.15s;
+    animation-delay: 1.15s;
+}
+
+.login.sq .progress .loadbar:after {
+    -webkit-animation: unset;
+    animation: unset
+}
+
+@-webkit-keyframes loadbar {
+    0% {
+        left: -35%;
+        right: 100%;
+    }
+    60% {
+        left: 100%;
+        right: -90%;
+    }
+    100% {
+        left: 100%;
+        right: -90%;
+    }
+}
+
+@-webkit-keyframes fillred {
+    0% {
+        left: 50%;
+        right: 50%;
+    }
+    100% {
+        left: 0;
+        right: 0;
+    }
+}
+
+@keyframes loadbar {
+    0% {
+        left: -35%;
+        right: 100%;
+    }
+    60% {
+        left: 100%;
+        right: -90%;
+    }
+    100% {
+        left: 100%;
+        right: -90%;
+    }
+}
+
+@keyframes fillred {
+    0% {
+        left: 50%;
+        right: 50%;
+    }
+    100% {
+        left: 0;
+        right: 0;
+    }
+}
+
+@-webkit-keyframes loadbar-short {
+    0% {
+        left: -200%;
+        right: 100%;
+    }
+    60% {
+        left: 107%;
+        right: -8%;
+    }
+    100% {
+        left: 107%;
+        right: -8%;
+    }
+}
+
+@keyframes loadbar-short {
+    0% {
+        left: -200%;
+        right: 100%;
+    }
+    60% {
+        left: 107%;
+        right: -8%;
+    }
+    100% {
+        left: 107%;
+        right: -8%;
+    }
+}
+
+@media(max-width: 400px) {
+    .login.sq {
+        padding: 0;
+        margin-top: -10mm;
+        background-color: whitesmoke;
+        grid-template-rows: 35mm 1mm 1.5fr 5mm;
+    }
+    
+    .login.sq.forgot {
+        grid-template-rows: 30mm 1mm 45mm;
+        padding-left: 0;
+        border: none;
+    }
+    
+    .login.sq>form[sq-context=forgotinfo] {
+        grid-template-rows: 10mm 4mm 10mm 0mm 0 4mm 1fr;
+    }
+    
+    .login.sq>.header {
+        padding: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .login.sq:not(.forgot)>.header {
+        padding-top: 20mm;
+    }
+    
+    .login.sq> .header > span[name=app]{
+        text-align: center;
+        width: 100%;
+    }
+    
+    .login.sq.forgot >.header>span.forgot:last-child {
+        font-size: 3.5mm;
+        width: calc(100% - 8mm);
+        padding: 0 4mm;
+        text-align: center;
+    }
+    
+    .login.sq> .header > img {
+        position: absolute;
+        top: 10mm;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 15mm;
+    }
+    
+    .login.sq>form {
+        
+    }
+    
+    .login.sq>form>[type=submit] {
+        padding: 2.5mm;
+        width: 85%;
+    }
+    
+    .login.sq>button[name=forgotpass] {
+        margin: 0 auto;
+        text-align: center;
+    }
+}

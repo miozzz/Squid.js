@@ -1,0 +1,38 @@
+.treegrid.sq {
+    color: inherit;
+    border-collapse: collapse;
+}
+
+.treegrid.sq tr,
+.treegrid.sq tr td,
+.treegrid.sq tr th {
+    color: inherit;
+    padding: 2px 4px;
+    border: 1px solid #efefef;
+}
+
+.treegrid.sq tr:hover {
+    background: #f1efef;
+}
+
+.treegrid.sq tr.selected {
+    background: #e9f9fd;
+}
+
+.treegrid.sq tr td[name="expander"] img {
+    float: right;
+    width: 10px;
+    height: 12px;
+}
+
+.treegrid.sq tr td[name="image"] {
+    width: 1px;
+    white-space: nowrap;
+}
+
+.treegrid.sq tr td[name="image"] img {
+    height: 18px;
+    vertical-align: middle;
+}
+
+.treegrid.sq tr.hidden { display: none; }

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<div xmlns:sq="sq" xmlns:samples="samples"> 
+    <samples:codearea title="Columns:" ></samples:codearea>
+    <samples:codearea title="Data:" ></samples:codearea>
+    <button>Set Data to Treegrid</button>
+    <sq:treegrid name="tree"></sq:treegrid>
+</div>

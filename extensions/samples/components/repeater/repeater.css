@@ -1,0 +1,57 @@
+.samples.repeater{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    grid-template-rows: 90mm 10mm ;
+    grid-template-areas: 
+    "left right" 
+    "bot bot";
+}
+.samples.repeater > *{
+    margin:1mm;
+}
+.samples.repeater .codearea.samples{
+    grid-area: left;
+    display:subgrid;
+}
+
+.samples.repeater > div[sq-repeat]{
+    grid-area: right;
+    display:subgrid;
+    overflow-y:scroll; 
+    background:whitesmoke;
+}
+
+.samples.repeater button{
+    grid-area: bot;
+  
+}
+
+[sq-repeat=contacts] > div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr auto;
+    grid-template-areas: 
+    "topL topR" 
+    "mid mid" 
+    "bot bot";
+    margin:1mm;
+    background:white;
+    padding:1mm;
+}
+[sq-repeat=contacts] > div > * {
+    margin:0.4mm;
+    font-size:3mm;
+}
+[sq-repeat=contacts] > div > label[name=nm]{
+    grid-area: topL;
+    
+}
+[sq-repeat=contacts] > div > span[name=nm]{
+    grid-area: topR;
+}
+[sq-repeat=contacts] > div > label[name=contacts]{
+    grid-area: mid;
+}
+[sq-repeat=contacts] > div > [sq-repeat]{
+    grid-area: bot;
+}

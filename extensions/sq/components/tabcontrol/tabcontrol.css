@@ -1,0 +1,88 @@
+.sq.tabcontrol {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 7mm auto;
+    grid-template-areas: "btn" "page";
+    min-height: 0;
+    min-width: 0;
+}
+
+.sq.tabcontrol button {
+    background-color: transparent;
+    border: none;
+}
+
+.sq.tabcontrol [name=btnpanel] {
+    grid-area: btn;
+    border-bottom: 1px solid gray
+}
+
+.sq.tabcontrol [template=body] {
+    grid-area: page;
+    border: 1px solid gray;
+    border-top: none;
+    padding: 2mm;
+    min-height: 0;
+    min-width: 0;
+}
+
+.sq.tabcontrol .tabbutton {
+    position: relative;
+    display: inline-block;
+    height: 10mm;
+    padding: 0 5mm;
+    background-color: transparent;
+    border: none;
+    margin-bottom: -1px;
+    border-bottom: 1px solid gray;
+    cursor: pointer;
+}
+
+.sq.tabcontrol .tabbutton.active {
+    border: 1px solid gray;
+    border-bottom-color: transparent;
+    border-radius: 5px 5px 0 0;
+    background-color: white;
+}
+
+.sq.tabcontrol .tabbutton span {
+    position: relative;
+    top: 2mm;
+}
+
+.sq.tabcontrol .tabbutton button {
+    display: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sq.tabcontrol .tabbutton button:after {
+    content: 'x';
+    font-weight: bold;
+    position: absolute;
+    color: #5e5e5e;
+    font-size: 3.5mm;
+    top: 0;
+    left: 1mm;
+}
+
+.sq.tabcontrol.close > [name=btnpanel] .tabbutton:not(:only-child):hover button {
+    display: block;
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    top: 2.5mm;
+    right: 1mm
+}
+
+.sq.tabcontrol .tabbutton:not(:only-child):hover button:hover:after {
+    text-decoration: underline
+}
+
+.sq.tabcontrol .sq.tabpage {
+    display: none
+}
+
+.sq.tabcontrol .sq.tabpage.active {
+    display: block
+}

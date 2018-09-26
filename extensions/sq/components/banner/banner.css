@@ -1,0 +1,23 @@
+.banner img[name=main].coin {
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    background: linear-gradient(to right, red 50%, black 50%);
+    animation: coin-rotate 2s both infinite;
+  }
+  
+  @keyframes coin-rotate {
+    from {
+      transform: rotateY(0);
+    }
+  
+    to {
+      transform: rotateY(180deg);
+    }
+  }
+
+  .sq.banner h1{
+    font-family: arial;
+    color:rgb(97, 68, 111);
+    font-size: xx-large;
+  }
